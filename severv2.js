@@ -16,14 +16,14 @@ const PORT = process.env.PORT || 3000;
 fastify.register(fastifyWebsocket);
 
 // --- Cấu hình API Key và Auth cho WebSocket ---
-const API_KEY = "huydevtoolviphehe"; // Thay đổi key này bằng key của bạn
+const API_KEY = "tuankietdevtool"; // Thay đổi key này bằng key của bạn
 
 // Middleware for HTTP API (still keeping it for now, can be removed)
 fastify.addHook("onRequest", async (request, reply) => {
   if (request.url.startsWith("/api/sunwin") || request.url.startsWith("/api/history-json")) {
     const urlKey = request.query.key;
     if (!urlKey || urlKey !== API_KEY) {
-      return reply.code(403).send({ error: "Key sai mẹ rồi, liên hệ tele: @huydev" });
+      return reply.code(403).send({ error: "Key sai mẹ rồi, liên hệ tele: @hellokietne21" });
     }
   }
 });
@@ -280,7 +280,7 @@ async function broadcastPrediction() {
                 "do_tin_cay": "0.00%",
                 "cau": "Chưa đủ dữ liệu",
                 "ngay": currentTimestamp,
-                "Id": "tuantu"
+                "Id": "@hellokietne21"
             };
             connectedClients.forEach(clientWs => {
                 if (clientWs.readyState === WebSocket.OPEN) {
@@ -494,7 +494,7 @@ async function broadcastPrediction() {
             "do_tin_cay": `${overallConfidence}%`,
             "cau": detectedPatternString,
             "ngay": currentTimestamp,
-            "Id": "tuantu"
+            "Id": "@hellokietne21"
         };
 
         // Broadcast to all connected WebSocket clients
@@ -2441,7 +2441,7 @@ const start = async () => {
     console.log(`Server Fastify đang chạy tại ${address}`);
     console.log(`HTTP API (for testing): http://localhost:${PORT}/api/sunwin?key=${API_KEY}`);
     console.log(`History JSON (for testing): http://localhost:${PORT}/api/history-json?key=${API_KEY}`);
-    console.log(`WebSocket API (use ws:// with public IP): ws://YOUR_PUBLIC_IP:${PORT}/api/sunwin/taixiu/ws?id=Tuantubotuananh&key=${API_KEY}`);
+    console.log(`WebSocket API (use ws:// with public IP): ws://YOUR_PUBLIC_IP:${PORT}/api/sunwin/taixiu/ws?id=tuankietdevtool&key=${API_KEY}`);
   } catch (err) {
     console.error("Lỗi khi khởi động server Fastify:", err);
     process.exit(1);
