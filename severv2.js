@@ -2147,7 +2147,7 @@ fastify.get("/api/sunwin", async (request, reply) => {
           "do_tin_cay": "0.00%",
           "cau": "Chưa đủ dữ liệu",
           "ngay": currentTimestamp,
-          "Id": "HuyDev"
+          "Id": "Kietdev"
         });
         return resolve();
       }
@@ -2306,7 +2306,7 @@ fastify.get("/api/sunwin", async (request, reply) => {
         "do_tin_cay": `${overallConfidence}%`,
         "cau": detectedPatternString,
         "ngay": currentTimestamp,
-        "Id": "HuyDev"
+        "Id": "Kietdev"
       });
       resolve();
     });
